@@ -5,7 +5,7 @@ A replica of https://laptopfriendly.co/ made as a part of https://www.udemy.com/
 It is not a legit service, it is a study project.
 
 Technolodgy stack:
-- Pyathon Flask templates
+- Python Flask templates
 - Python web API with flask
 - SQL Alchemy
 - JS DOM manipulation
