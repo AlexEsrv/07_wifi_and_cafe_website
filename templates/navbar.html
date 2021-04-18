@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="navbar-logo"><a href={{ url_for('home') }}><i class="fas fa-wifi"></i><span>CAFES FOR LAPTOPS</span></a>
+    </div>
+    <ul class="navbar-menu">
+        <li id="cities-list"><a href={{ url_for('cafes_page') }}><i class="fas fa-globe-europe"></i>ALL CITIES</a>
+            <ul>
+{#                <li class="nav-city"><a href="#">ALL CITIES</a></li>#}
+{#                <li class="nav-city"><a href="#">MOSCOW</a></li>#}
+{#                <li class="nav-city"><a href="#">LONDON</a></li>#}
+            </ul>
+        </li>
+        <li><a href="{{ url_for('add_cafe')}}"><i class="fas fa-plus-circle"></i>SUGGEST A PLACE</a></li>
+        <li><a href="{{ url_for('about') }}"><i class="fas fa-user-friends"></i>ABOUT</a></li>
+    </ul>
+</nav>

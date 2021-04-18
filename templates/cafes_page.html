@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="cafe-page">
+        <div class="cafes">
+            <h1 class="city">{{ city }}</h1>
+            <p>The best work and study-friendly cafes, restaurants, and hotel lobbies in {{ city }}. Find venues with
+                free and reliable Wi-Fi hotspots, ample power sockets, and comfy seating areas.</p>
+            <div class="filters">
+                <div>
+                    <input type="checkbox" id="has-wifi" value="has-wifi">
+                    <label for="has-wifi"><i class="fas fa-wifi"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="has-sockets" value="has-sockets">
+                    <label for="has-sockets"><i class="fas fa-charging-station"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="has-phone" value="has-phone">
+                    <label for="has-phone"><i class="fas fa-phone"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="has-toilet" value="has-toilet">
+                    <label for="has-toilet"><i class="fas fa-restroom"></i></label>
+                </div>
+            </div>
+
+            <h1 class="cafe-quantity">{{ cafes_list|length }} WORK-FRIENDLY PLACES</h1>
+            <div class="cafe-list">
+                {% for cafe in cafes_list %}
+                    <div class="cafe-info {{ "has-wifi" if cafe["has_wifi"] else "" }} {{ "has-sockets" if cafe["has_sockets"] else "" }} {{ "has-phone" if cafe["can_take_calls"] else "" }} {{ "has-toilet" if cafe["has_toilet"] else "" }}"
+                         cafe_id={{ cafe["id"] }}>
+                        <div class="cafe-image"><a href="{{ url_for("cafe", c_id=cafe["id"]) }}"><img
+                                src="{{ cafe["img_url"] }}" alt="cafe picture"></a></div>
+                        <div class="cafe-data">
+                            <p class="cafe-name">{{ cafe["name"] }}</p>
+                            <p class="seats"><i class="fas fa-chair"></i>{{ cafe["seats"] }}</p>
+                            <p class="location"><i class="fas fa-location-arrow"></i><a
+                                    href="{{ cafe["map_url"] }}">{{ cafe["location"] }}</a></p>
+                            <p class="cafe-features">
+                                {% if cafe["has_wifi"] %}
+                                    <i class="fas fa-wifi"></i>
+                                {% endif %}
+                                {% if cafe["has_sockets"] %}
+                                    <i class="fas fa-charging-station"></i>
+                                {% endif %}
+                                {% if cafe["can_take_calls"] %}
+                                    <i class="fas fa-phone"></i>
+                                {% endif %}
+                                {% if cafe["has_toilet"] %}
+                                    <i class="fas fa-restroom"></i>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="google-map" class="map">
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block additional_script %}
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_api }}&callback=initMap"></script>
+    <script>
+        filters.addEventListener('click', processFilters);
+        cafes_list.addEventListener('mouseenter', cafe_list_mouse_event);
+        cafes_list.addEventListener('mouseleave', cafe_list_mouse_event);
+        cafes_list.addEventListener('mouseover', cafe_list_mouse_event);
+        cafes_list.addEventListener('mouseout', cafe_list_mouse_event);
+    </script>
+
+{% endblock %}

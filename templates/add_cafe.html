@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="#add_cafe_form" class="edit_form">
+        <form action="{{ url_for('cafes') }}" method="POST">
+            {{ edit_form.csrf_token }}
+
+            <div class="form-input">
+                {{ edit_form.name.label }}
+                {{ edit_form.name }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.map_url.label }}
+                {{ edit_form.map_url }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.img_url.label }}
+                {{ edit_form.img_url }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.city.label }}
+                {{ edit_form.city(rows=10) }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.location.label }}
+                {{ edit_form.location }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.seats.label }}
+                {{ edit_form.seats }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.coffee_price.label }}
+                {{ edit_form.coffee_price }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.has_wifi.label }}
+                {{ edit_form.has_wifi }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.has_phone.label }}
+                {{ edit_form.has_phone }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.has_sockets.label }}
+                {{ edit_form.has_sockets }}
+            </div>
+
+            <div class="form-input">
+                {{ edit_form.has_toilet.label }}
+                {{ edit_form.has_toilet }}
+            </div>
+
+            <div class="form-input submit">
+                {{ edit_form.submit_cafe }}
+            </div>
+
+        </form>
+    </div>
+    {% include 'footer.html' %}
+{% endblock %}
+
+{% block additional_script %}
+    <script>
+       cafe_form.addEventListener('submit', add_cafe);
+    </script>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="wrapper-cafe">
+        <div class="cafe-reviews-page">
+            <div class="cafe-picture" style=" --pic-url: url({{ cafe["img_url"] }})">
+                <h1>{{ cafe["name"] }}</h1>
+            </div>
+            <div class="cafe-features-block">
+                <p class="seats"><i class="fas fa-chair"></i>{{ cafe["seats"] }}</p>
+                <p class="location"><i class="fas fa-location-arrow"></i>{{ cafe["location"] }}</p>
+                <p class="cafe-features">
+                    {% if cafe["has_wifi"] %}
+                        <i class="fas fa-wifi"></i>
+                        {% endif %}
+                        {% if cafe["has_sockets"] %}
+                        <i class="fas fa-charging-station"></i>
+                        {% endif %}
+                        {% if cafe["can_take_calls"] %}
+                        <i class="fas fa-phone"></i>
+                        {% endif %}
+                        {% if cafe["has_toilet"] %}
+                        <i class="fas fa-restroom"></i>
+                        {% endif %}
+                </p>
+            </div>
+            <div class="cafe-reviews">
+                <h1>REVIEWS</h1>
+                <div class="review-list">
+{#                    <div class="review-card">#}
+{#                        <p class="review-content">#}
+{#                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid amet at consectetur#}
+{#                            consequatur dignissimos, doloribus error esse est eum facere, ipsam itaque molestias#}
+{#                            mollitia necessitatibus nisi odio officiis optio praesentium ratione repellendus repudiandae#}
+{#                            sapiente sint tenetur vero, voluptate voluptatem?#}
+{#                        </p>#}
+{#                        <p class="review-author">By @Alex</p>#}
+{#                        <p class="review-date">Date: 20/20/20</p>#}
+{#                    </div>#}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+{% endblock %}

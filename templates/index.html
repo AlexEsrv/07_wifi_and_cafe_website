@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="home">
+        <div class="landing-picture">
+            <h1>LIKE COWORKING,<br>BUT BETTER</h1>
+            <p>From coffee shops to hotel lobbies, discover everyday<br>places to work and connect.</p>
+            <a class="main-button" href="{{ url_for('cafes_page')}}">EXPLORE</a>
+        </div>
+        <div class="first-page-layout">
+            <div class="feature-block fb-1">
+                <div><i class="fas fa-laptop"></i></div>
+                <h2>BE PRODUCTIVE</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque autem commodi dolorem, eius
+                    molestias officia optio quas rerum!</p>
+            </div>
+
+            <div class="feature-block fb-2">
+                <div><i class="far fa-smile"></i></div>
+                <h2>FEEL WELCOME</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque autem commodi dolorem, eius
+                    molestias officia optio quas rerum!</p>
+            </div>
+
+            <div class="feature-block fb-3">
+                <div><i class="fas fa-lightbulb"></i></div>
+                <h2>STAY INSPIRED</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque autem commodi dolorem, eius
+                    molestias officia optio quas rerum!</p>
+            </div>
+
+            <div class="about-block ab">
+                <p>
+                    CafesForLaptops partners with local venues that appreciate and support the remote worker culture.
+                    All
+                    locations are carefully inspected and manually approved by our curation team.
+                </p>
+            </div>
+
+            <div class="how-header hh">
+                <h3>HOW IT WORKS</h3>
+            </div>
+
+            <div class="how-block hb-1">
+                <div class="how-link"><a href="#"><img class="how-image" src="../static/img/map.jpg" alt="MAP"></a>
+                </div>
+                <h3>FIND LOCAL WORK HUBS</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis deserunt ex illo impedit non
+                    provident sunt tempore unde voluptate?</p>
+            </div>
+
+            <div class="how-block hb-2">
+                <div class="how-link"><a href="#"><img class="how-image" src="../static/img/social-media.png"
+                                                       alt=""></a></div>
+                <h3>MEET LIKE-MINDED PEOPLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis deserunt ex illo impedit non
+                    provident sunt tempore unde voluptate?</p>
+            </div>
+
+            <div class="review-header rh">
+                <h3>HEAR FROM OTHERS</h3>
+            </div>
+
+            <div class="review-block rb-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis deserunt doloremque error eum
+                    minus
+                    natus officiis quibusdam quidem quis ratione, veritatis? Dicta doloribus earum inventore quibusdam,
+                    recusandae similique sit?</p>
+            </div>
+            <div class="review-block rb-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis deserunt doloremque error eum
+                    minus
+                    natus officiis quibusdam quidem quis ratione, veritatis? Dicta doloribus earum inventore quibusdam,
+                    recusandae similique sit?</p>
+            </div>
+            <div class="review-block rb-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis deserunt doloremque error eum
+                    minus
+                    natus officiis quibusdam quidem quis ratione, veritatis? Dicta doloribus earum inventore quibusdam,
+                    recusandae similique sit?</p>
+            </div>
+            <div class="get-to-work gw">
+                <h1>GET TO WORK</h1>
+                <a class="main-button" href="{{ url_for('cafes_page')}}">EXPLORE</a>
+            </div>
+        </div>
+
+    </section>
+
+    {% include 'footer.html' %}
+
+{% endblock %}
+

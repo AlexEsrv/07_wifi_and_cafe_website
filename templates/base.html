@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+<script src={{ url_for('static', filename='app.js') }}></script>
+
+{% block additional_script %}
+
+{% endblock %}
+</body>
+</html>
