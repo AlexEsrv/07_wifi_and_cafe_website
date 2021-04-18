@@ -1,6 +1,6 @@
 # Cafe for Laptops website
 
-A replica of https://laptopfriendly.co/ made as a part of https://www.udemy.com/course/100-days-of-code/ coorse.
+A replica of https://laptopfriendly.co/ made as a part of https://www.udemy.com/course/100-days-of-code/ course.
 
 It is not a legit service, it is a study project.
 
